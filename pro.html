@@ -41,7 +41,7 @@
           <li class="nav__link click">
             <a
               href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              class="nav__link--anchor nav__link-anchor link__hover-effect link__hover-effect--black"
               ><i class="fa-solid fa-circle-half-stroke"></i
             ></a>
           </li>
@@ -50,7 +50,7 @@
       <header class="header">
         <div class="header__content">
           <h1 class="title">Hello!</h1>
-          <h1 class="title purple">Im Casey.</h1>
+          <h1 class="title purple">I'm Casey.</h1>
           <p class="header__para">
             Im a <span class="blue">Frontend Sowftware Engineer</span> looking
             to make <span class="blue">Great Changes To The World</span>.
@@ -88,12 +88,109 @@
       <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
+
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">
+            Here's a bit<span class="purple"> About Me.</span>
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Frontend Software Engineer / Collision Repair Tech
+          </h4>
+          <p class="modal__para--about">
+            Im a 30 year old dad and <br />
+            <span class="blue">Frontend Software Engineer</span> with experience
+            solving hard questions from
+            <span class="purple"
+              >Rebuilding Vehicles as well as Debugging Websites.</span
+            >
+            <br />
+            I have a broad set of
+            <span class="blue">Knowladge and Ideas</span> that I love to use to
+            make <span class="purple">Fun, Easy, and Efficient</span> answers to
+            the hard problems in my life and work. <br />
+            I am currently expanding my knowladge on
+            <span class="blue">HTML, CSS, JavaScript, React, and more</span> at
+            <span class="blue">FES Institute.</span>
+          </p>
+          <div class="modal__languages">
+            <figure class="languages">
+              <img
+                class="language"
+                class="modal__language--img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt=""
+              />
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="languages">
+              <img
+                class="language"
+                class="modal__language--img"
+                src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                alt=""
+              />
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="languages">
+              <img
+                class="language"
+                class="modal__language--img"
+                src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                alt=""
+              />
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="languages">
+              <img
+                class="language"
+                class="modal__language--img"
+                src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
+                alt=""
+              />
+              <span class="language__name">React</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <h3 class="modal__title modal__title--contact">Lets Have A Chat</h3>
+          <h3 class="modal__sub-title modal__sub-title__contact">
+            I Am Truly looking to be a Huge Part to your Team! Please reach out
+            to me here.
+          </h3>
+          <form id="contact__form" action="">
+            <div class="form--item">
+              <label class="form__item--label">Name.</label>
+              <input class="input" name="user_name" type="text" required />
+            </div>
+            <div class="form--item">
+              <label class="form__item--label">Email.</label>
+              <input class="input" name="user_email" type="email" required />
+            </div>
+            <div class="form--item">
+              <label class="form__item--label">Message.</label>
+              <textarea
+                class="input"
+                name="message"
+                type="text"
+                required
+              ></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">Send</button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">Thanks For The Message Looking Forward To Speaking To You Soon.</div>
+        </div>
+        <i class="fas fa-times modal__exit click"></i>
+      </div>
     </section>
     <section id="projects">
       <div class="container">
         <div class="row">
           <h1 class="section__title">
-            Here are some of my <span class="purple">Projects</span>.
+            Here are some of my <span class="blue">Projects</span>.
           </h1>
           <ul class="project__title">
             <li class="project">
@@ -138,7 +235,7 @@
                   alt=""
                 />
                 <div class="project__wrapper--bg"></div>
-               
+
                 <div class="project__description">
                   <h3 class="project__description--title info">
                     Info On The Go.
@@ -156,12 +253,11 @@
                   </p>
                   <div class="project__description--links">
                     <a href="#" class="project__description--link">
-                      <i class="fa-brands fa-github info--2"></i>
+                      <i class="fa-brands fa-github info"></i>
                     </a>
                     <a href="#" class="project__description--link">
-                      <i class="fa-solid fa-link info--2"></i>
+                      <i class="fa-solid fa-link info"></i>
                     </a>
-                    
                   </div>
                 </div>
               </div>
@@ -189,10 +285,10 @@
                   </p>
                   <div class="project__description--links">
                     <a href="#" class="project__description--link">
-                      <i class="fa-brands fa-github cbs info--2"></i>
+                      <i class="fa-brands fa-github cbs"></i>
                     </a>
                     <a href="#" class="project__description--link">
-                      <i class="fa-solid fa-link cbs info--2"></i>
+                      <i class="fa-solid fa-link cbs"></i>
                     </a>
                   </div>
                 </div>
@@ -204,52 +300,44 @@
     </section>
     <footer>
       <div class="container">
-        <figure>
-          <img src="logo/logo/Invisa LOGO.png" alt="" />
-        </figure>
-        <div class="footer__social--list">
-          <a
-            href="#"
-            class="footer__social--link
-             liver__hover-effect
-              liver__hover-effect--white"
-          >
-            Github
-          </a>
-          <a
-            href="#"
-            class="footer__social--link
-             liver__hover-effect
-              liver__hover-effect--white"
-          >
-            Linkedin
-          </a>
-          <a
-            href="#"
-            class="footer__social--link
-             liver__hover-effect
-              liver__hover-effect--white"
-          >
-            Email
-          </a>
-          <a
-            href="#"
-            class="footer__social--link
-             liver__hover-effect
-              liver__hover-effect--white"
-          >
-             Resume
-          </a>
-          <a
-            href="#"
-            class="footer__social--link
-             liver__hover-effect
-              liver__hover-effect--white"
-          >
-            Github
-          </a>
+        <div class="row footer__row">
+          <figure>
+            <img class="footer__logo" src="logo/logo/Invisa LOGO.png" alt="" />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Github
+            </a>
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Linkedin
+            </a>
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Email
+            </a>
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Resume
+            </a>
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Github
+            </a>
+          </div>
+          <div class="footer__copywright">Copywrite © Casey Sexton 2025</div>
         </div>
-        <div class="copywright">Copywrite © Casey Sexton 2025</div>
       </div>
     </footer>
   </body>
