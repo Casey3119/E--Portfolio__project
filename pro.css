@@ -7,9 +7,13 @@
   font-family: "Roboto", sans-serif;
 }
 
-#personal-logo {
+#personal-logo, #personal-logo--neon{
   height: 100px;
   width: 100px;
+}
+
+#personal-logo--neon {
+  visibility: hidden;
 }
 
 li {
@@ -91,6 +95,8 @@ a {
   line-height: 1;
 }
 
+
+
 .container {
   padding: 50px 0;
   width: 100%;
@@ -153,6 +159,105 @@ label {
   font-size: 14px;
   font-weight: bold;
 }
+
+nav,
+.scroll,
+.header {
+  opacity: 1;
+  visibility: visible;
+  transition: all 600ms 800ms;
+}
+
+.modal--open nav,
+.modal--open.scroll,
+.modal--open .header {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms;
+}
+
+.dark-theme .title, 
+.dark-theme .section__title, 
+.dark-theme .section__sub-title, 
+.dark-theme .nav__link--anchor, 
+.dark-theme .fa-solid, 
+.dark-theme .header__para,
+.dark-theme .footer__copywright,
+.dark-theme .footer__social--link
+ {
+color: white;
+}
+
+.dark-theme section,
+.dark-theme footer {
+background-color: #0e0e12;
+}
+
+.dark-theme .modal__about {
+  background-color: #242424;
+  color: white;
+}
+
+.dark-theme .blue,
+.dark-theme .footer__social--link,
+.dark-theme .nav__link--anchor,
+.dark-theme .footer__copywright {
+  color: rgb(234, 231, 250);
+  text-shadow: 0 0 5px #111ff0, 0 0 10px #111ff0, 0 0 20px #111ff0,
+    0 0 40px #111ff0, 0 0 80px #111ff0;
+}
+
+.dark-theme .scroll__icon, 
+.dark-theme .social__links{
+  border: 2px solid white;
+  box-shadow: 0 0 5px #111ff0, 0 0 10px #111ff0, 0 0 20px #111ff0,
+    0 0 40px #111ff0, 0 0 80px #111ff0;
+
+
+}
+
+.dark-theme .scroll__icon:after {
+  background-color: white;
+  box-shadow: 0 0 5px #111ff0, 0 0 10px #111ff0, 0 0 20px #111ff0,
+  0 0 40px #111ff0, 0 0 80px #111ff0;
+
+}
+
+.dark-theme .purple {
+  color: rgb(251, 235, 251);
+  text-shadow: 0 0 5px rgb(140, 121, 245), 0 0 10px rgb(140, 121, 245), 0 0 20px rgb(140, 121, 245),
+    0 0 40px rgb(140, 121, 245), 0 0 80px rgb(140, 121, 245);
+}
+
+.dark-theme .languages:hover .language {
+  box-shadow: 0 0 5px #111ff0, 0 0 10px #111ff0, 0 0 20px #111ff0,
+    0 0 40px #111ff0, 0 0 80px #111ff0;
+  border-radius: 100%;
+    overflow: visible;
+
+}
+
+.dark-theme .languages:hover .language__name {
+  color: rgb(244, 244, 247);
+  text-shadow: 0 0 5px #111ff0, 0 0 10px #111ff0, 0 0 20px #111ff0,
+    0 0 40px #111ff0, 0 0 80px #111ff0;
+}
+
+.dark-theme #personal-logo, 
+.dark-theme .footer__logo{
+  display: none;
+}
+
+.dark-theme #personal-logo--neon {
+  visibility: visible;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #111ff0, 0 0 10px #111ff0, 0 0 20px #111ff0,
+    0 0 40px #111ff0, 0 0 80px #111ff0;
+    transition: all 400ms ease;
+}
+
+
+
 
 /* 
 
@@ -295,11 +400,23 @@ MODAL
   width: 90%;
   max-width: 1100px;
   height: 700px;
-  box-shadow: 0 20px 40px 0 #111ff0;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
-  /* z-index: -1; */
+  visibility: hidden;
+  z-index: -1;
+  transition: visibility 1s, z-index 1s, box-shadow 1.5s ease;
+}
+
+.modal--open .modal {
+  z-index: 60;
+  box-shadow: 0 20px 40px 0 #111ff0;
+  visibility: visible;
+}
+
+.modal--open .modal__about,
+.modal--open .modal__contact {
+  transform: translate(0%);
 }
 
 .modal__half {
@@ -309,10 +426,12 @@ MODAL
   flex-direction: column;
   justify-content: center;
   position: relative;
+  transition: all 300ms ease-in;
 }
 
 .modal__about {
   background-color: rgb(238, 238, 240);
+  transform: translateX(-110%);
 }
 
 .modal__languages {
@@ -357,6 +476,7 @@ MODAL
 .modal__contact {
   background-color: #242424;
   color: rgb(238, 238, 240);
+  transform: translateX(110%);
 }
 
 .modal__title {
@@ -413,7 +533,7 @@ MODAL
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: #242424;
@@ -430,17 +550,21 @@ MODAL
 }
 
 .modal__overlay--success {
-  text-shadow: 0 0 5px #2afc05, 0 0 10px #2afc05, 0 0 20px #5ffc43,
-    0 0 40px #2afc05;
+  text-shadow: 0 0 5px #2afc05, 0 0 10px #2afc05, 0 0 20px #5ffc43;
     font-weight: 700;
     font-size: 40px;
     text-align: center;
     padding: 28px;
-    z-index: -1;
+  z-index: -1;
+}
+
+.modal__overlay--visible {
+z-index: 1;
+display: flex;
 }
 
 .fa-spinner {
-  animation: spinner 1850ms infinite linear;
+  animation: spinner 1000ms infinite linear;
 }
 
 @keyframes spinner {
@@ -459,7 +583,7 @@ MODAL
   color: aliceblue;
   font-size: 30px;
   z-index: 100;
-  text-shadow: 0 0 5px #d13013, 0 0 10px #d13013
+  text-shadow: 0 0 5px #ee3414, 0 0 10px #ee3414
 }
 
 /*
