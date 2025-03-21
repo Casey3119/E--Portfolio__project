@@ -1,15 +1,25 @@
-let isMobile = false;
 let contrastToggle = false;
-let isModalOpen = false; // Initialize with a default value
+let isModalOpen = false;
+const scalscaleFactor= 1 / 10;
 
+function movesBackground(event) {
+  const shapes = document.querySelectorAll(".shape");
+  const x = event.clientX * scalscaleFactor;
+  const y = event.clientY * scalscaleFactor;
+
+  for (let i = 0; i < shapes.length; ++i) {
+    const isOdd = i % 2 !== 0;
+    const oddInteger = isOdd ? -1 : 1; 
+    shapes[i].style.transform = `translate(${x * oddInteger}px, ${y * oddInteger}px) rotate(${x * oddInteger * 10}deg)`;
+  }
+}
 
 function toggleContrast() {
   contrastToggle = !contrastToggle;
   if (contrastToggle) {
-    document.body.classList += " dark-theme"
-  } 
-  else {
-    document.body.classList.remove("dark-theme")
+    document.body.classList += " dark-theme";
+  } else {
+    document.body.classList.remove("dark-theme");
   }
 }
 
